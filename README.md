@@ -1,6 +1,8 @@
 <a name="readme-top"></a>
 
-<div align="center">
+<div align="center"> 
+
+<img src="https://user-images.githubusercontent.com/88631022/230097778-38b68457-0b03-45fa-8945-f8e91bc66490.jpg" alt="mylogo" style="width: 300px;">
 
   <br/>
 
