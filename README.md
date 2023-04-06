@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-<div align="center"> 
+<div align="center">
 
 <img src="https://user-images.githubusercontent.com/88631022/230097778-38b68457-0b03-45fa-8945-f8e91bc66490.jpg" alt="mylogo" style="width: 300px;">
 
@@ -57,8 +57,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[TBD]**
 - **[TBD]**
 
@@ -68,15 +66,13 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> The link will be added soon.
+The link will be added soon.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -127,8 +123,6 @@ gem install rspec
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 **SHIMWA Pray Eddy**
 
 - GitHub: [EddyShimwa](https://github.com/EddyShimwa)
@@ -140,8 +134,6 @@ gem install rspec
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Setup and controllers.]**
 - [ ] **[I will add process data in models]**
