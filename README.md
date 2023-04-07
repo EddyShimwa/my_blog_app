@@ -57,8 +57,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[TBD]**
-- **[TBD]**
+- **[Create and manage blog posts]**
+- **[Read posts by other users]**
+- **[Interact by giving likes/comments]**
+- **[User authentication and authorization]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
