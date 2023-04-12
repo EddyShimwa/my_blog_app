@@ -1,0 +1,1 @@
+# for posts_controller
