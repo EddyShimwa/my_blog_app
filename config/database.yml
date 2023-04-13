@@ -21,6 +21,5 @@ test:
 production:
   <<: *default
   database: my_blog_app_production
-  username: postgres
+  username: my_blog_app
   password: password
-  host: localhost

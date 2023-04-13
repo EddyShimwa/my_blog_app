@@ -17,7 +17,7 @@ third_post = Post.create(author: first_user, title: 'Hello', text: 'This is my t
 forth_post = Post.create(author: first_user, title: 'Hello', text: 'This is my forth post')
 
 
-Comment.create(post: first_post, author: second_user, text: 'Hi I am comment 1' )
+Comment.create(post: first_post, author: second_user, text: 'Hi I am comment 1')
 Comment.create(post: first_post, author: second_user, text: 'Hi I am comment 2' )
 Comment.create(post: first_post, author: second_user, text: 'Hi I am comment 3' )
 Comment.create(post: first_post, author: second_user, text: 'Hi I am comment 4' )
