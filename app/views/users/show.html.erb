@@ -1,5 +1,5 @@
 <section class= "users-card">
-<%= render partial: "user" %>
+<%= render "user" %>
 
   <div class="user-bio">
     <h3> <%=@user.bio%><h3>
@@ -7,12 +7,9 @@
    <ul>
    <% @posts.each do |post|%>
      <li>
-      <h2><%=post.title%><h2>
-      <h3><%=post.text%></h3>
-      <div>
-          <h5>Comments:<%=post.comments_counter%><h5>
-          <h5>Likes:<%=post.likes_counter%></h5>
-       <div>
+     <div> 
+       <%= render "post" %>
+       </div>
      </li>
      <%end%>
    </ul>
