@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Like, type: :model do
   it 'The number of likes will increased by one ' do
-    first_user = User.new(name: 'eddy', bio: 'this is my bio', postsCounter: 4)
+    first_user = User.new(name: 'eddy', bio: 'this is my bio', posts_counter: 4)
     first_user.save
 
     my_post = Post.new(title: 'first post', text: 'post text', comments_counter: 6, likes_counter: 10,

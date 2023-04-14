@@ -7,13 +7,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-first_user = User.create(name: 'John Doe', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Travel enthusiast from California')
-second_user = User.create(name: 'Jane Smith', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Yoga instructor from India')
-third_user = User.create(name: 'Michael Johnson', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Animal lover from Australia')
-forth_user = User.create(name: 'Amanda Lee', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Dietitian from New York')
-fifth_user = User.create(name: 'Mark Brown', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Entrepreneur from London')
-sixth_user = User.create(name: 'Emily Davis', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Interior designer from Paris')
-seventh_user = User.create(name: 'David Kim', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Communication expert from Seoul')
+first_user = User.create(name: 'John Doe', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Travel enthusiast from California', posts_counter: 0)
+second_user = User.create(name: 'Jane Smith', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Yoga instructor from India', posts_counter: 0)
+third_user = User.create(name: 'Michael Johnson', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Animal lover from Australia', posts_counter: 0)
+forth_user = User.create(name: 'Amanda Lee', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Dietitian from New York', posts_counter: 0)
+fifth_user = User.create(name: 'Mark Brown', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Entrepreneur from London', posts_counter: 0)
+sixth_user = User.create(name: 'Emily Davis', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Interior designer from Paris', posts_counter: 0)
+seventh_user = User.create(name: 'David Kim', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Communication expert from Seoul', posts_counter: 0)
 
 first_post = Post.create(author: first_user, title: 'Solo', text: '10 Reasons Why Traveling Solo Can Change Your Life Forever')
 second_post = Post.create(author: second_user, title: 'Meditation', text: 'The Benefits of Meditation: How It Can Improve Your Life')
@@ -22,10 +22,6 @@ forth_post = Post.create(author: forth_user, title: 'Healthy', text: 'Healthy Ea
 fifth_post = Post.create(author: fifth_user, title: 'Online', text: 'How to Start a Successful Online Business from Scratch')
 sixth_post = Post.create(author: sixth_user, title: 'Home', text: '5 Simple Home Improvement Projects to Enhance Your Living Space')
 seventh_post = Post.create(author: seventh_user, title: 'Public', text: 'How to master the art of public speaking')
-
-
-
-
 
 
 
