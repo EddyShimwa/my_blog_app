@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  let!(:user) { User.create(name: 'John', bio: 'Teacher', postsCounter: 0) }
+  let!(:user) { User.create(name: 'John', bio: 'Teacher', posts_counter: 0) }
   subject do
     described_class.new(title: 'New Post', text: 'This is my blog.', author: user, comments_counter: 0,
                         likes_counter: 0)
@@ -51,7 +51,7 @@ RSpec.describe Post, type: :model do
     end
 
     it 'should update counter of related user' do
-      expect(subject.author.postsCounter).to eql 1
+      expect(subject.author.posts_counter).to eql 1
     end
   end
 

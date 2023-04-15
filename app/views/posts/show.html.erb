@@ -1,1 +1,18 @@
-<h1>Hello, this is post id</h1>
+<div >
+  <div class='postdetails'>
+    <div class='postCard'>  
+      <h2 ><%= @post.title %></h2> By <p ><%= @user.name %></p>
+      <div class="likesComments">
+        <p >Likes: <%= @post.likes_counter  %> ,</p>
+        <p >comments: <%= @post.comments_counter %> </p>
+      </div>
+    </div> 
+  </div>
+  <div class="comments-container">
+    <% @comments.each do |comment| %>
+      <div >  
+        <p ><%= comment.author.name %>: <%= comment.text %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

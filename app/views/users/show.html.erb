@@ -1,1 +1,20 @@
-<h1>This is user id</h1>
+<section class= "users-card">
+<%= render "user" %>
+
+  <div class="user-bio">
+    <h3> <%=@user.bio%><h3>
+   </div>
+   <ul>
+   <% @posts.each do |post|%>
+     <li>
+     <div> 
+       <%= render "post" %>
+       </div>
+     </li>
+     <%end%>
+   </ul>
+
+   <button>
+     <a href=<%="/users/#{@user.id}/posts"%>> See All Posts</a>
+   </button>
+</section>

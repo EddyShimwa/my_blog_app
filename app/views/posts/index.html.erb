@@ -1,1 +1,30 @@
-<h1>Here is a list of posts for a given user</h1>
+<section class= "users-card">
+<%= render "user"%>
+   <ul>
+   <% @posts.each do |post|%>
+     <li>
+     <a href="<%= user_post_path(@user, post) %>">
+      <div>
+          <h2><%=post.title%><h2>
+          <h3><%=post.text%></h3>
+          <p>Comments:<%=post.comments_counter%><p>
+          <p>Likes:<%=post.likes_counter%></p>
+       <div>
+     </li>
+     <div class="comments"> 
+     <ul>
+        <%post.most_recent_comments.each do |comment|%>
+        <li>
+             <h3><%=@user.name%> : <%=comment.text%></h3>
+        </li>
+        <%end%>
+      </ul>
+      </a>
+     </div>
+     <%end%>
+   </ul>
+
+   <button>
+     <a href=<%="/users/#{@user.id}/posts"%>> Pagination</a>
+   </button>
+</section>
