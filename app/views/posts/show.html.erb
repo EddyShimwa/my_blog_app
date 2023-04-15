@@ -6,6 +6,11 @@
         <p >Likes: <%= @post.likes_counter  %> ,</p>
         <p >comments: <%= @post.comments_counter %> </p>
       </div>
+      <%= form_with model: [@post, @like], url: create_post_like_path  do |form| %>
+      <div class="mb-4 flex flex-col">
+        <%= form.submit "Like 👍" , class: "text-[#11537d] text-xl font-medium bg-white px-4 py-2 rounded-[15px] w-fit cursor-pointer" %>
+      </div>
+    <% end %>
     </div> 
   </div>
   <div class="comments-container">
@@ -14,5 +19,9 @@
         <p ><%= comment.author.name %>: <%= comment.text %></p>
       </div>
     <% end %>
+    <div class="btnSeeAll">
+      <%= link_to "add comment", new_post_comment_path(@post)%>
+     </div>
+
   </div>
 </div>

@@ -24,7 +24,7 @@
      <%end%>
    </ul>
 
-   <button>
-     <a href=<%="/users/#{@user.id}/posts"%>> Pagination</a>
-   </button>
+   <div class="add-new-post">
+    <a href="<%= new_user_post_path(@user) %>">Add new post</a>
+  </div>
 </section>
