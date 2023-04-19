@@ -64,7 +64,7 @@ RSpec.describe 'posts/show', type: :feature do
   end
 
   it 'Show the post body' do
-    expect(page).to have_content('MyText1')
+    expect(page).to have_content('Text1')
   end
 
   it 'Show the comment author' do
