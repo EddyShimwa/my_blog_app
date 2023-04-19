@@ -1,27 +1,21 @@
-<div >
-  <div class='postdetails'>
-    <div class='postCard'>  
-      <h2 ><%= @post.title %></h2> By <p ><%= @user.name %></p>
-      <div class="likesComments">
-        <p >Likes: <%= @post.likes_counter  %> ,</p>
-        <p >comments: <%= @post.comments_counter %> </p>
-      </div>
-      <%= form_with model: [@post, @like], url: create_post_like_path  do |form| %>
-      <div class="mb-4 flex flex-col">
-        <%= form.submit "Like 👍" , class: "text-[#11537d] text-xl font-medium bg-white px-4 py-2 rounded-[15px] w-fit cursor-pointer" %>
-      </div>
-    <% end %>
-    </div> 
-  </div>
-  <div class="comments-container">
-    <% @comments.each do |comment| %>
-      <div >  
-        <p ><%= comment.author.name %>: <%= comment.text %></p>
-      </div>
-    <% end %>
-    <div class="btnSeeAll">
-      <%= link_to "add comment", new_post_comment_path(@post)%>
-     </div>
+<div>
+    <h2>Post #<%= @post.id%> <%= @post.title%> by <% @post.author.name%></h2>
+    <span>Comments:<%= @post.comments_counter%>, Likes: <%= @post.likes_counter%> </span>
+    <p><%= @post.text%></p>
 
-  </div>
+    <span>Post created by username1<%= time_ago_in_words(@post.created_at)%> ago</span>
+
+    <div>
+        <h3>Comments</h3>
+        <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like do |form| %>
+            <%= form.submit "Like" %>
+        <% end %>
+        <button><%= link_to "Add comment", new_user_post_comment_path(post_id: @post.id) %> </button>
+        <% @comments.includes(:author).each do |comment| %>
+            <div>
+                <p> <%= comment.author.name %>: <%= comment.text %></p>
+                <span>Comment created <%= time_ago_in_words(comment.created_at)%> ago</span>
+            </div>
+        <% end %>
+    </div>
 </div>

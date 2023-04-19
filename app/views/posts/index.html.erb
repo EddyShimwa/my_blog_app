@@ -1,30 +1,25 @@
-<section class= "users-card">
-<%= render "user"%>
-   <ul>
-   <% @posts.each do |post|%>
-     <li>
-     <a href="<%= user_post_path(@user, post) %>">
-      <div>
-          <h2><%=post.title%><h2>
-          <h3><%=post.text%></h3>
-          <p>Comments:<%=post.comments_counter%><p>
-          <p>Likes:<%=post.likes_counter%></p>
-       <div>
-     </li>
-     <div class="comments"> 
-     <ul>
-        <%post.most_recent_comments.each do |comment|%>
-        <li>
-             <h3><%=@user.name%> : <%=comment.text%></h3>
-        </li>
-        <%end%>
-      </ul>
-      </a>
-     </div>
-     <%end%>
-   </ul>
-
-   <div class="add-new-post">
-    <a href="<%= new_user_post_path(@user) %>">Add new post</a>
-  </div>
-</section>
+<div>
+    <div>
+        <img src=<%= @user.photo%> alt="<%= @user.name%>'s photo">
+        <h2><%= @user.name%></h2>
+        <%= link_to "New Post", new_user_post_path(@user) %>
+    </div>
+    <div>
+        <% @user.posts.each do |post| %>
+            <div>
+                <a href="posts/<%= post.id%>">
+                <h3>Post #<%= post.id %> <%= post.title %></h3>
+                </a>
+                <p> <%= post.text.split[0..80].join(" ") %> </p>
+                <p> Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%> </p>
+            </div>
+            <div><% post.most_recent_comments.includes(:author).each do |comment|%>
+                <p><%= comment.author.name%></p>
+                <p><%= comment.text%></p>
+                <br>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+    <button>Pagination</button>
+</div>
