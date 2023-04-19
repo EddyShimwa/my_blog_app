@@ -13,7 +13,7 @@
      </li>
      <div class="comments"> 
      <ul>
-        <%post.most_recent_comments.each do |comment|%>
+        <%post.most_recent_comments.includes(:author).each do |comment|%>
         <li>
              <h3><%=@user.name%> : <%=comment.text%></h3>
         </li>
