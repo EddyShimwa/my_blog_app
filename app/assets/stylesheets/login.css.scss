@@ -42,3 +42,14 @@
 #login-form input[type="submit"]:hover {
   background-color: #00796b;
 }
+
+.btn {
+    width: 100%;
+}
+.cancel {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
