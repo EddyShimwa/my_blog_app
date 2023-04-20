@@ -15,6 +15,10 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 
 gem 'devise'
 
+gem 'sassc-rails'
+
+gem 'bootstrap', '~> 5.1.0'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 

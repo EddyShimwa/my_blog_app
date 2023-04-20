@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+ .usersCards ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    padding: 50px;
+ }
+
+ .nav-link {
+    display: flex;
+    list-style: none;
+    border: 1px solid rgb(98, 108, 236);
+    width: fit-content;
+    background-color: #007bff;
+    color: white
+
+ }
+
+ .actions input{
+    display: flex;
+    background-color: #007bff;
+    color: white;
+    border: 1px solid rgb(98, 108, 236);
+    margin: auto;
+    
+ }
