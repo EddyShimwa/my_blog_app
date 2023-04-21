@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   def new
     @user = current_user
     @post = Post.new
+    @post.comments_counter = 0
   end
 
   def create

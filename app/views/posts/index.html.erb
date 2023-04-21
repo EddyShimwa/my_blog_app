@@ -1,25 +1,42 @@
-<div>
-    <div>
-        <img src=<%= @user.photo%> alt="<%= @user.name%>'s photo">
-        <h2><%= @user.name%></h2>
-        <%= link_to "New Post", new_user_post_path(@user) %>
+
+<div class="container my-4">
+  <div class="row align-items-center">
+    <div class="col-md-2">
+      <img src="<%= @user.photo %>" alt="<%= @user.name %>'s photo" class="rounded-circle img-fluid">
     </div>
-    <div>
-        <% @user.posts.each do |post| %>
-            <div>
-                <a href="posts/<%= post.id%>">
-                <h3>Post #<%= post.id %> <%= post.title %></h3>
-                </a>
-                <p> <%= post.text.split[0..80].join(" ") %> </p>
-                <p> Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%> </p>
-            </div>
-            <div><% post.most_recent_comments.includes(:author).each do |comment|%>
-                <p><%= comment.author.name%></p>
-                <p><%= comment.text%></p>
-                <br>
-                <% end %>
-            </div>
-        <% end %>
+    <div class="col-md-6">
+      <h2><%= @user.name %></h2>
+      <%= link_to "Add New Post", new_user_post_path(@user), class: "btn btn-primary" %>
     </div>
-    <button>Pagination</button>
+  </div>
+  <hr>
+  <div class="row">
+    <% @user.posts.each do |post| %>
+      <div class="col-md-12">
+        <div class="card my-4">
+          <div class="card-body">
+            <a href="<%= user_post_path(@user, post) %>">
+              <h3 class="card-title">Post #<%= post.id %> <%= post.title %></h3>
+            </a>
+            <p class="card-text"><%= post.text.split[0..80].join(" ") %></p>
+            <span class="text-muted"><%= post.comments_counter %> Comments, <%= post.likes_counter %> Likes</span>
+          </div>
+          <% if post.most_recent_comments.any? %>
+            <div class="card-footer">
+              <% post.most_recent_comments.includes(:author).each do |comment| %>
+                <div class="mb-2">
+                  <span><%= comment.author.name %>:</span> <%= comment.text %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <%= button_to "Pagination", "#", class: "btn btn-secondary" %>
+    </div>
+  </div>
 </div>

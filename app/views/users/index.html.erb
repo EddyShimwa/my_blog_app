@@ -1,17 +1,20 @@
-<div>
-    <h1>List of All users</h1>
-    <p>number of users: <%= @users.length %></p>
+<div class="container text-center">
+  <h1>List of All users</h1>
+  <p>Number of users: <%= @users.length %></p>
+  <div class="row justify-content-center">
     <% @users.each do |user| %>
-    
-            <div>
-                <img src=<%= user.photo%> alt="<%= user.name%>'s photo">
-                <%= link_to user_path(user.id) do %>
-                <h2><%= user.name%></h2>
-                <% end %>
-                <p>number of posts: <%= user.posts_counter%></p>
-            </div>
+      <div class="col-md-4 mb-3">
+        <div class="card h-100">
+          <img src=<%= user.photo %> class="card-img-top" alt="<%= user.name %>'s photo">
+          <div class="card-body">
+            <%= link_to user_path(user.id) do %>
+              <h2 class="card-title"><%= user.name %></h2>
+            <% end %>
+            <p class="card-text">Number of posts: <%= user.posts_counter || 0 %></p>
+          </div>
+        </div>
+      </div>
     <% end %>
+  </div>
 </div>
-
-
 

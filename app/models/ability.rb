@@ -10,6 +10,8 @@ class Ability
     else
       can :destroy, Post, user_id: user.id
       can :destroy, Comment, user_id: user.id
+      can :create, Comment if user.present?
+      # can :create, Like if user.present?
       can :read, :all
       can :create, Post if user.present?
 
