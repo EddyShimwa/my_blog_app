@@ -30,8 +30,10 @@
             </div>
             <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
             <% if can?(:destroy, @comment) %>
+             <button> click me</button>
               <%= button_to "Delete", user_post_comment_path(@comment), method: :delete, class: "btn btn-danger btn-sm" %>
             <% end %>
+           
             <small class="text-muted">Comment created <%= time_ago_in_words(comment.created_at)%> ago</small>
           </div>
         </div>

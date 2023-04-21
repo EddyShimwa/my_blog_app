@@ -1,7 +1,7 @@
 <div class="container my-4">
   <h1 style="text-align: center">Write a new post</h1>
 
-  <%= form_with model: @post, url: user_posts_path(@user.id), class: "my-4" do |form| %>
+  <%= form_with model: @post, url: user_posts_path(user.id), class: "my-4" do |form| %>
     <div class="form-group">
       <%= form.label :title, "Title" %>
       <%= form.text_field :title, class: "form-control", placeholder: "Enter a title for your post" %>
@@ -15,3 +15,4 @@
     <%= form.submit "Submit", class: "btn btn-primary" %>
   <% end %>
 </div>
+
