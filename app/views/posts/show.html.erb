@@ -1,5 +1,5 @@
 <div>
-    <h2>Post #<%= @post.id%> <%= @post.title%> by <% @post.author.name%></h2>
+    <h2>Post #<%= @post.id%> <%= @post.title%> by <%=@post.author.name%></h2>
     <span>Comments:<%= @post.comments_counter%>, Likes: <%= @post.likes_counter%> </span>
     <p><%= @post.text%></p>
 
@@ -14,8 +14,13 @@
         <% @comments.includes(:author).each do |comment| %>
             <div>
                 <p> <%= comment.author.name %>: <%= comment.text %></p>
+
+                       <% if can?(:destroy, @comment) %>
+             <%= button_to "Delete", user_post_comment_path(@comment), method: :delete %>
+             <% end %>
                 <span>Comment created <%= time_ago_in_words(comment.created_at)%> ago</span>
             </div>
         <% end %>
+ 
     </div>
 </div>

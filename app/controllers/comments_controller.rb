@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new
   end
@@ -11,6 +13,18 @@ class CommentsController < ApplicationController
     else
       @post = Post.find(params[:post_id])
       redirect_to user_post_path(@post.author, @post), notice: 'comment created successfully'
+    end
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    authoroze! :destroy, @comment
+    if @comment.destroy
+      flash[:success] = 'Comment was successfully deleted.'
+      redirect_to user_post_path(@comment.post.author, @comment.post)
+    else
+      flash[:error] = 'Failed to delete comment.'
+      redirect_to @comment.post
     end
   end
 
