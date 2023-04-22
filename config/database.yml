@@ -4,22 +4,22 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   host: localhost
   username: postgres
-  password: password
+  password: 8?rSjWDd#J5!a4T
 
 development:
   <<: *default
   database: my_blog_app_development
   username: postgres
-  password: password
+  password: 8?rSjWDd#J5!a4T
 
 test:
   <<: *default
   database: my_blog_app_test
   username: postgres
-  password: password
+  password: 8?rSjWDd#J5!a4T
 
 production:
   <<: *default
   database: my_blog_app_production
-  username: my_blog_app
-  password: password
+  username: postgres
+  password: 8?rSjWDd#J5!a4T
