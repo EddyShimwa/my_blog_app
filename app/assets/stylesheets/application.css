@@ -37,3 +37,12 @@
   border: 1px solid rgb(98, 108, 236);
   margin: auto;
 }
+
+.btn a {
+  color: white;
+}
+
+.counter {
+  display: block;
+  text-align: center;
+}

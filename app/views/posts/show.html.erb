@@ -1,21 +1,44 @@
-<div>
-    <h2>Post #<%= @post.id%> <%= @post.title%> by <% @post.author.name%></h2>
-    <span>Comments:<%= @post.comments_counter%>, Likes: <%= @post.likes_counter%> </span>
-    <p><%= @post.text%></p>
 
-    <span>Post created by username1<%= time_ago_in_words(@post.created_at)%> ago</span>
-
-    <div>
-        <h3>Comments</h3>
-        <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like do |form| %>
-            <%= form.submit "Like" %>
-        <% end %>
-        <button><%= link_to "Add comment", new_user_post_comment_path(post_id: @post.id) %> </button>
-        <% @comments.includes(:author).each do |comment| %>
+<div class="container my-6 mx-auto" style="width: 100%">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Post #<%= @post.id%>: <%= @post.title%></h2>
+          <p class="card-text"><%= @post.text%></p>
+              <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like, html: { class: "form-inline" } do |form| %>
+                <%= form.submit "Like", class: "btn btn-primary btn-sm"%>
+              <% end %>
+          <p class="card-text"><small class="text-muted">Posted by <%= @post.author.name %> <%= time_ago_in_words(@post.created_at)%> ago</small></p>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex justify-content-between align-items-center">
             <div>
-                <p> <%= comment.author.name %>: <%= comment.text %></p>
-                <span>Comment created <%= time_ago_in_words(comment.created_at)%> ago</span>
+          
+              <span class="ml-2"><%= @post.likes_counter || 0 %> Likes</span>
             </div>
-        <% end %>
+           
+          </div>
+        </div>
+      </div>
+      <% @comments.includes(:author).each do |comment| %>
+        <div class="card my-3">
+          <div class="card-body">
+           <div> 
+              <span class ="counter"><%= @post.comments_counter || 0 %> Comments</span>
+             
+            </div>
+            <p class="card-text"><%= comment.author.name %>: <%= comment.text %></p>
+            <% if can?(:destroy, @comment) %>
+             <button> click me</button>
+              <%= button_to "Delete", user_post_comment_path(@comment), method: :delete, class: "btn btn-danger btn-sm" %>
+            <% end %>
+           
+            <small class="text-muted">Comment created <%= time_ago_in_words(comment.created_at)%> ago</small>
+          </div>
+        </div>
+      <% end %>
+       <button class="btn btn-primary btn-sm ml-2" style="width: fit-content"><%= link_to "Add comment", new_user_post_comment_path(post_id: @post.id) %> </button>
     </div>
+  </div>
 </div>

@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       resources :likes, only: %i[create]
     end
   end
+  post '/users/:user_id/posts/:id/likes', to: 'likes#create', as: 'create_post_like'
+  post '/posts/:post_id/comments', to: 'comments#create', as: 'create_post_comment'
 end
