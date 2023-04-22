@@ -46,6 +46,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (7.0.4.3)
       activesupport (= 7.0.4.3)
       globalid (>= 0.3.6)
@@ -90,6 +95,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -120,6 +127,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.6.3)
+    jsonapi-renderer (0.2.2)
     loofah (2.20.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -147,6 +155,8 @@ GEM
     nokogiri (1.14.2-x64-mingw-ucrt)
       racc (~> 1.4)
     nokogiri (1.14.2-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
@@ -258,6 +268,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.6.2-x64-mingw-ucrt)
     sqlite3 (1.6.2-x64-mingw32)
+    sqlite3 (1.6.2-x86_64-darwin)
     sqlite3 (1.6.2-x86_64-linux)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
@@ -295,9 +306,11 @@ GEM
 PLATFORMS
   x64-mingw-ucrt
   x64-mingw32
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
+  active_model_serializers (~> 0.10.13)
   bootsnap
   bootstrap (~> 5.1.0)
   cancancan
